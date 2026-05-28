@@ -1,3 +1,54 @@
+/* =========================
+Ini: Language active
+========================= */
+
+let lang =
+localStorage.getItem("lang")
+|| navigator.language.slice(0,2);
+
+if(!["es","en","ca","de"].includes(lang)){
+    lang = "es";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    setLanguage(lang);
+});
+
+function setLanguage(lang){
+
+    /* TEXTS */
+    document.querySelectorAll("[data-es]").forEach(el => {
+
+        const text = el.getAttribute("data-" + lang);
+
+        if(text){
+            el.innerText = text;
+        }
+
+    });
+
+    /* SAVE */
+    localStorage.setItem("lang", lang);
+
+    /* REMOVE ACTIVE */
+    document.querySelectorAll(".lang").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    /* ADD ACTIVE */
+    document.querySelectorAll(".lang").forEach(btn => {
+
+        if(btn.textContent.toLowerCase() === lang){
+            btn.classList.add("active");
+        }
+
+    });
+
+}
+
+/* =========================
+End: Language active
+========================= */
 
 
 function toggleMenu(){
