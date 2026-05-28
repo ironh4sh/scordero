@@ -175,6 +175,48 @@ MOBILE MENU
     cursor:pointer;
 }
 
+.mobile-languages{
+
+    display:flex;
+    gap:12px;
+
+    margin-top:40px;
+}
+
+.mobile-languages .lang{
+
+    width:46px;
+    height:46px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,255,255,0.06);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:#fff;
+
+    font-size:13px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.mobile-languages .lang:hover{
+
+    background:#4da3ff;
+    color:#000;
+
+    transform:translateY(-2px);
+
+}
+
 /* =========================
 RESPONSIVE
 ========================= */
