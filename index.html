@@ -1,1436 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#000;
-    color:#fff;
-    font-family:'Inter',sans-serif;
-}
-
-/* =========================================================
-HEADER
-========================================================= */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&lt;scordero/&gt; </title>
 
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:999;
-    backdrop-filter:blur(25px);
-    background:rgba(0,0,0,0.75);
-    border-bottom:1px solid rgba(255,255,255,0.08);
-}
+    <meta name="description"
+        content="Soporte informático, reparación de ordenadores, desarrollo web, redes y asistencia técnica para particulares y pymes en Arenys de Mar y el Maresme.">
 
-.navbar{
-    max-width:1800px;
-    margin:auto;
-    padding:22px 60px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
+    <meta name="keywords"
+        content="soporte informático Arenys de Mar, reparación ordenadores Maresme, técnico informático Mataró, desarrollo web Maresme, programación web Arenys, asistencia remota, mantenimiento informático, redes wifi, soporte IT particulares, soporte IT pymes">
 
-.logo{
-    text-decoration:none;
-    color:#fff;
-    font-size:28px;
-    font-weight:800;
-    display:inline-block;
-}
+    <meta name="author" content="scordero">
 
-.logo span{
-    color:#4da3ff;
-}
+    <meta name="robots" content="index, follow">
 
-/* NAV LINKS */
-.nav-center{
-    display:flex;
-    gap:45px;
-}
+    <meta name="language" content="es">
 
-.nav-center a{
-    color:#d6d6d6;
-    text-decoration:none;
-    font-size:15px;
-    transition:0.3s;
-}
+    <meta name="revisit-after" content="7 days">
 
-.nav-center a:hover{
-    color:#fff;
-}
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://www.scordero.com/">
 
-/* RIGHT AREA */
-.nav-right{
-    display:flex;
-    align-items:center;
-    gap:25px;
-}
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
 
-/* LANGS */
-.languages{
-    display:flex;
-    gap:10px;
-    align-items:center;
-}
+    <!-- OPEN GRAPH (FACEBOOK / WHATSAPP) -->
 
-/* BUTTON */
+    <meta property="og:type" content="website">
 
-.lang{
+    <meta property="og:title" content="Soporte Informático y Desarrollo Web en el Maresme">
 
-    width:42px;
-    height:42px;
+    <meta property="og:description"
+        content="Soluciones IT, reparación de ordenadores, programación web y asistencia técnica para particulares y pequeñas empresas del Maresme.">
 
-    border-radius:50%;
+    <meta property="og:image" content="https://www.tudominio.com/img/seo-cover.jpg">
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:rgba(255,255,255,0.05);
+    <meta property="og:url" content="https://www.tudominio.com/">
 
-    border:1px solid rgba(255,255,255,0.08);
+    <meta property="og:site_name" content="scordero">
 
-    color:#9a9a9a;
+    <meta property="og:locale" content="es_ES">
 
-    font-size:12px;
-    font-weight:600;
 
-    cursor:pointer;
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
 
-    transition:0.3s ease;
-}
+<body>
 
-/* HOVER */
+    <!-- HEADER -->
+    <header>
 
-.lang:hover{
+        <div class="navbar">
 
-    background:rgba(77,163,255,0.12);
+            <!-- LOGO -->
+            <a href="#" class="logo">
+                &lt;<span>sc</span>ordero/&gt;
+            </a>
 
-    border-color:rgba(77,163,255,0.25);
+            <!-- MENU -->
+            <nav class="nav-center" aria-label="main navigation">
+                <a href="#" data-es="Inicio" data-en="Home" data-ca="Inici" data-de="Start"></a>
 
-    color:#fff;
+                <a href="#services" data-es="Servicios" data-en="Services" data-ca="Serveis"
+                    data-de="Dienstleistungen"></a>
 
-    transform:translateY(-2px);
+                <a href="#customers" data-es="Clientes" data-en="Clients" data-ca="Clients" data-de="Kunden"></a>
 
-}
+                <a href="#contact" data-es="Contacto" data-en="Contact" data-ca="Contacte" data-de="Kontakt"></a>
+            </nav>
 
-/* ACTIVE LANGUAGE */
+            <!-- RIGHT -->
+            <div class="nav-right">
 
-.lang.active{
+                <div class="languages">
+                    <div class="lang" data-lang="es" onclick="setLanguage('es')">ES</div>
+                    <div class="lang"  data-lang="en" onclick="setLanguage('en')">EN</div>
+                    <div class="lang"  data-lang="ca" onclick="setLanguage('ca')">CAT</div>
+                    <div class="lang"  data-lang="de" onclick="setLanguage('de')">DE</div>
+                </div>
 
-    background:#4da3ff;
+                <div class="socials">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/scorderoIT/" target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
 
-    color:#000;
+            </div>
 
-    border-color:#4da3ff;
+            <!-- HAMBURGER -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="close-menu" onclick="toggleMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+           <a href="#"
+       onclick="toggleMenu()"
+       data-es="Inicio"
+       data-en="Home"
+       data-ca="Inici"
+       data-de="Start"></a>
+
+    <a href="#services"
+       onclick="toggleMenu()"
+       data-es="Servicios"
+       data-en="Services"
+       data-ca="Serveis"
+       data-de="Dienstleistungen"></a>
+
+    <a href="#customers"
+       onclick="toggleMenu()"
+       data-es="Clientes"
+       data-en="Clients"
+       data-ca="Clients"
+       data-de="Kunden"></a>
+
+    <a href="#contact"
+       onclick="toggleMenu()"
+       data-es="Contacto"
+       data-en="Contact"
+       data-ca="Contacte"
+       data-de="Kontakt"></a>
+ <!-- LANGUAGES -->
+    <div class="mobile-languages">
+
+        <div class="lang" onclick="setLanguage('es')">ES</div>
+        <div class="lang" onclick="setLanguage('en')">EN</div>
+        <div class="lang" onclick="setLanguage('ca')">CAT</div>
+        <div class="lang" onclick="setLanguage('de')">DE</div>
+
+    </div>
+        </div>
+        
+
+    </header>
+
+    <!-- ICONS SERVICES -->
+
+    <section class="services-icons">
+
+
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="label" data-es="Desarrollo software" data-en="Software development"
+                data-ca="Desenvolupament de programari" data-de="Softwareentwicklung">
+            </div>
+        </div>
+
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="label" data-es="Automatizaciones" data-en="Automations" data-ca="Automatitzacions"
+                data-de="Automatisierung">
+            </div>
+        </div>
+
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+            <div class="label" data-es="Asistencia remota" data-en="Remote support" data-ca="Assistència remota"
+                data-de="Fernunterstützung">
+            </div>
+        </div>
+
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-laptop"></i>
+            </div>
+            <div class="label" data-es="Reparación de PC" data-en="PC repair" data-ca="Reparació de PC"
+                data-de="PC-Reparatur">
+            </div>
+        </div>
+
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <div class="label" data-es="Redes y conectividad" data-en="Networks & connectivity"
+                data-ca="Xarxes i connectivitat" data-de="Netzwerke und Konnektivität">
+            </div>
+        </div>
+
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-plug"></i>
+            </div>
+            <div class="label" data-es="Configuración de hardware" data-en="Hardware setup"
+                data-ca="Configuració de maquinari" data-de="Hardware-Konfiguration">
+            </div>
+        </div>
 
-    box-shadow:
-    0 0 18px rgba(77,163,255,0.45);
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-shield"></i>
+            </div>
+            <div class="label" data-es="Seguridad web básica" data-en="Basic web security"
+                data-ca="Seguretat web bàsica" data-de="Grundlegende Websicherheit">
+            </div>
+        </div>
 
-    transform:translateY(-2px);
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="label" data-es="Formación básica" data-en="Basic training" data-ca="Formació bàsica"
+                data-de="Grundausbildung">
+            </div>
+        </div>
 
-}
 
-/* SOCIALS */
-.socials{
-    display:flex;
-    gap:14px;
-}
+    </section>
 
-.socials i{
-    color:#bbb;
-    cursor:pointer;
-    transition:0.3s;
-}
+    <!-- HERO -->
 
-.socials i:hover{
-    color:#fff;
-    transform:translateY(-2px);
-}
+    <section class="hero">
 
-/* HAMBURGER */
-.hamburger{
-    display:none;
-    font-size:24px;
-    cursor:pointer;
-}
+        <div class="hero-content">
 
-/* =========================
-MOBILE MENU
-========================= */
 
-.mobile-menu{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    background:rgba(0,0,0,0.98);
-    backdrop-filter:blur(20px);
+            <span class="badge" data-es="Servicios informáticos" data-en="IT Services" data-ca="Serveis informàtics"
+                data-de="IT-Dienstleistungen">
+            </span>
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:30px;
+            <h1 data-es="Tecnología sin complicaciones" data-en="Technology without complications"
+                data-ca="Tecnologia sense complicacions" data-de="Technologie ohne Komplikationen">
+            </h1>
 
-    opacity:0;
-    visibility:hidden;
-    transform:scale(1.05);
-    transition:0.35s ease;
-    z-index:998;
-}
+            <p data-es="Ayuda tecnológica para particulares y pymes: reparación de ordenadores, programación y soporte en el Maresme."
+                data-en="Tech support for individuals and small businesses: computer repair, programming and IT support in Maresme."
+                data-ca="Ajuda tecnològica per a particulars i pimes: reparació d'ordinadors, programació i suport al Maresme."
+                data-de="Technische Unterstützung für Privatpersonen und KMU: Computerreparatur, Programmierung und IT-Support im Maresme.">
+            </p>
 
-.mobile-menu.active{
-    opacity:1;
-    visibility:visible;
-    transform:scale(1);
-}
 
-.mobile-menu a{
-    font-size:30px;
-    color:#bbb;
-    text-decoration:none;
-    transition:0.3s;
-}
+        </div>
 
-.mobile-menu a:hover{
-    color:#fff;
-}
+    </section>
 
-.close-menu{
-    position:absolute;
-    top:30px;
-    right:30px;
-    font-size:28px;
-    cursor:pointer;
-}
 
-.mobile-languages{
+    <!-- SERVICES -->
 
-    display:flex;
-    gap:12px;
+    <section id="services" class="services">
 
-    margin-top:40px;
-}
+        <div class="grid">
 
-.mobile-languages .lang{
+            <div class="card">
 
-    width:46px;
-    height:46px;
+                <img src="img/service-support.jpg">
 
-    border-radius:50%;
+                <div class="overlay"></div>
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
 
-    background:rgba(255,255,255,0.06);
+                <div class="content">
 
-    border:1px solid rgba(255,255,255,0.08);
+                    <h2 data-es="Soporte IT" data-en="IT Support" data-ca="Suport IT" data-de="IT-Support">
+                    </h2>
 
-    color:#fff;
+                    <p data-es="Resolución de incidencias y asistencia técnica para equipos informáticos y periféricos, garantizando que su puesto de trabajo se mantenga siempre operativo."
+                        data-en="Incident resolution and technical support for computer systems and peripherals, ensuring your workplace remains fully operational."
+                        data-ca="Resolució d'incidències i assistència tècnica per a equips informàtics i perifèrics, garantint que el teu lloc de treball funcioni sempre."
+                        data-de="Störungsbehebung und technischer Support für Computer und Peripheriegeräte, damit Ihr Arbeitsplatz stets betriebsbereit bleibt.">
+                    </p>
 
-    font-size:13px;
-    font-weight:600;
+                    <!-- SKILLS -->
+                    <div class="skills-services">
 
-    cursor:pointer;
+                        <span data-es="Soporte Remoto" data-en="Remote Support" data-ca="Suport remot" data-de="Fernsupport">
+                        </span>
 
-    transition:0.3s;
-}
+                        <span data-es="Mantenimiento" data-en="Maintenance" data-ca="Manteniment" data-de="Wartung">
+                        </span>
 
-.mobile-languages .lang:hover{
+                        <span data-es="Asesoría Personalizada" data-en="Personal Consulting"
+                            data-ca="Assessorament personalitzat" data-de="Persönliche Beratung">
+                        </span>
 
-    background:#4da3ff;
-    color:#000;
+                            <span id="openIssueModal" data-es="🔵 Resolución de Incidencias" data-en="🔵Incident Resolution"
+                                data-ca="🔵Resolució d'incidències" data-de="🔵Störungsbehebung"> 
+                               
+                            </span>
+                    </div>
 
-    transform:translateY(-2px);
+                </div>
 
-}
+            </div>
 
-/* =========================
-RESPONSIVE
-========================= */
+            <div class="card">
 
-@media(max-width:1100px){
+                <img src="img/service-security.jpg">
 
-    .nav-center,
-    .nav-right{
-        display:none;
-    }
+                <div class="overlay"></div>
 
-    .hamburger{
-        display:block;
-    }
+                <div class="content">
 
-    .navbar{
-        padding:20px 25px;
-    }
 
-}
+                    <h2 data-es="Optimización de Procesos" data-en="Process Optimization"
+                        data-ca="Optimització de processos" data-de="Prozessoptimierung">
+                    </h2>
 
-/* =========================================================
-HERO
-========================================================= */
-.hero{
-    height:50vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:0 20px;
-    background:radial-gradient(circle at top,#111 0%,#000 60%);
-}
+                    <p data-es="Automatización de procesos repetitivos para optimizar tu trabajo diario, reduciendo errores y mejorando la eficiencia de tu entorno digital."
+                        data-en="Automation of repetitive tasks to optimize your daily work, reducing errors and improving efficiency in your digital environment."
+                        data-ca="Automatització de processos repetitius per optimitzar el teu treball diari, reduint errors i millorant l'eficiència del teu entorn digital."
+                        data-de="Automatisierung wiederkehrender Prozesse zur Optimierung deiner täglichen Arbeit, Reduzierung von Fehlern und Verbesserung der Effizienz deiner digitalen Umgebung.">
+                    </p>
 
-.hero-content{
-    max-width:900px;
-}
+                    <!-- SKILLS -->
+                    <div class="skills-services">
 
-.badge{
-    color:#aaa;
-    font-size:13px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-}
+                        <span data-es="Automatización" data-en="Automation" data-ca="Automatització" data-de="Automatisierung">
+                        </span>
 
-.hero h1{
-    font-size:86px;
-    line-height:1.05;
-    margin-top:20px;
-    letter-spacing:-5px;
-}
+                        <span data-es="Scripts" data-en="Scripts" data-ca="Scripts" data-de="Skripte">
+                        </span>
 
-.hero p{
-    color:#b8b8b8;
-    font-size:20px;
-    margin-top:25px;
-    line-height:1.7;
-}
+                        <span data-es="Integración de sistemas" data-en="System integration"
+                            data-ca="Integració de sistemes" data-de="Systemintegration">
+                        </span>
 
-.hero-buttons{
-    margin-top:35px;
-    display:flex;
-    justify-content:center;
-    gap:15px;
-}
+                        <span data-es="Reducción de errores" data-en="Error reduction" data-ca="Reducció d'errors"
+                            data-de="Fehlerreduzierung">
+                        </span>
 
-.btn-primary,
-.btn-secondary{
-    padding:16px 32px;
-    border-radius:999px;
-    font-size:15px;
-    cursor:pointer;
-    border:none;
-}
+                    </div>
 
-.btn-primary{
-    background:#fff;
-    color:#000;
-}
+                </div>
 
-.btn-secondary{
-    background:rgba(255,255,255,0.08);
-    color:#fff;
-    border:1px solid rgba(255,255,255,0.15);
-}
+            </div>
 
+            <div class="card">
 
+                <img src="img/service-software.jpg">
 
-/* =========================================================
-SKILLS SERVICES
-========================================================= */
+                <div class="overlay"></div>
 
-.skills-services{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    margin:25px 0 30px;
-}
+                <div class="content">
 
-.skills-services span{
 
-    padding:10px 18px;
-    border-radius:100px;
+                    <h2 data-es="Desarrollo" data-en="Development" data-ca="Desenvolupament" data-de="Entwicklung">
+                    </h2>
 
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.08);
-    color:#f1f1f1;
-    font-size:14px;
-    font-weight:600;
+                    <p data-es="Desarrollo de aplicaciones web y soluciones digitales conectadas con tus sistemas y APIs para optimizar procesos y crear experiencias más eficientes."
+                        data-en="Web application development and digital solutions connected to your systems and APIs to optimize processes and create more efficient experiences."
+                        data-ca="Desenvolupament d’aplicacions web i solucions digitals connectades amb els teus sistemes i APIs per optimitzar processos i crear experiències més eficients."
+                        data-de="Entwicklung von Webanwendungen und digitalen Lösungen, die mit Ihren Systemen und APIs verbunden sind, um Prozesse zu optimieren und effizientere Erfahrungen zu schaffen.">
+                    </p>
 
-    letter-spacing:0.2px;
+                    <!-- SKILLS -->
+                    <div class="skills-services">
 
-    backdrop-filter:blur(10px);
+                        <span data-es=".NET" data-en=".NET" data-ca=".NET" data-de=".NET"></span>
 
-    transition:0.3s;
-}
+                        <span data-es="SQL Server" data-en="SQL Server" data-ca="SQL Server"
+                            data-de="SQL Server"></span>
 
-/* HOVER */
-.skills-services span:hover{
+                        <span data-es="Azure" data-en="Azure" data-ca="Azure" data-de="Azure"></span>
 
-    background:#007aff;
-    color:#fff;
+                        <span data-es="Integración de sistemas" data-en="System integration"
+                            data-ca="Integració de sistemes" data-de="Systemintegration"></span>
 
-    transform:translateY(-3px);
-}
+                        <span data-es="Web" data-en="Web" data-ca="Web" data-de="Web"></span>
 
+                    </div>
 
-/* MOBILE */
-@media(max-width:700px){
+                </div>
 
-    .skills-services{
-        gap:8px;
-    }
+            </div>
 
-    .skills-services span{
-        font-size:11px;
-        padding:7px 12px;
-    }
+            <div class="card">
 
-}
+                <img src="img/service-automation.jpg">
 
-/* =========================================================
-ICONS SERVICES
-========================================================= */
+                <div class="overlay"></div>
 
-.services-icons {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    padding: 110px 40px 40px 40px;
-    gap: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    color: #fff;   
-}
+                <div class="content">
 
-.services-item{
-  flex:1;
-  text-align:center;
-}
 
-.icon-circle{
-  width:78px;
-  height:78px;
-  margin:0 auto 16px auto;
-  border-radius:50%;
-  background:#f5f5f5;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:0.25s;
-}
+                    <h2 data-es="Ciberseguridad web" data-en="Web cybersecurity" data-ca="Ciberseguretat web"
+                        data-de="Web-Sicherheit">
+                    </h2>
 
-.icon-circle i{
-  font-size:30px;
-  color:#111;
-}
+                    <p data-es="Revisión de la seguridad de tu web, corrigiendo vulnerabilidades y actualizando sistemas para proteger datos y procesos críticos."
+                        data-en="Security review of your website, fixing vulnerabilities and updating systems to protect data and critical processes."
+                        data-ca="Revisió de la seguretat del teu web, corregint vulnerabilitats i actualitzant sistemes per protegir dades i processos crítics."
+                        data-de="Sicherheitsprüfung deiner Website, Behebung von Schwachstellen und Aktualisierung von Systemen zum Schutz sensibler Daten und Prozesse.">
+                    </p>
 
-.label{
-  font-size:15px;
-  color: #fff;
-  line-height:1.4;
-  font-weight:500;
-}
-
-.services-item:hover .icon-circle{
-  background:#e8e8e8;
-  transform:translateY(-5px);
-}
-
-.info-icon{
-    margin-top:15px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-
-    color:#4da3ff;
-    cursor:pointer;
-
-    font-size:14px;
-    font-weight:500;
-
-    width:fit-content;
-
-    padding:8px 12px;
-    border-radius:999px;
-
-    background:rgba(0,122,255,0.12);
-    border:1px solid rgba(0,122,255,0.25);
-
-    transition:0.3s;
-}
-
-.info-icon i{
-    font-size:16px;
-}
-
-.info-icon:hover{
-    background:#007aff;
-    color:#fff;
-    transform:translateY(-2px);
-}
-
-
-/* =========================================================
-SERVICES PRICES
-========================================================= */
-.price-list{
-    margin-top:15px;
-    padding-left:0;
-    list-style:none;
-}
-
-.price-list li{
-    padding:10px 0;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    color:#ddd;
-    font-size:14px;
-}
-
-.price-list li strong{
-    color:#fff;
-}
-
-
-
-
-/* =========================================================
-SERVICES CARDS
-========================================================= */
-
-.services{
-    padding:40px 30px 120px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-}
-
-.card{
-    position:relative;
-    height:760px;
-    border-radius:36px;
-    overflow:hidden;
-}
-
-.card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:1.2s;
-}
-
-.card:hover img{
-    transform:scale(1.06);
-}
-
-.overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(to top,
-    rgba(0,0,0,0.96) 5%,
-    rgba(0,0,0,0.25) 60%,
-    rgba(0,0,0,0.05) 100%);
-}
-
-.content{
-    position:absolute;
-    bottom:70px;
-    left:70px;
-    z-index:2;
-    max-width:750px;
-}
-
-.content h2{
-    font-size:58px;
-    font-weight:700;
-    margin-bottom:22px;
-    letter-spacing:-2px;
-}
-
-.content p{
-    color:#d2d2d2;
-    line-height:1.8;
-    font-size:19px;
-    margin-bottom:35px;
-}
-
-.buttons{
-    display:flex;
-    gap:18px;
-}
-
-.btn{
-    border:none;
-    border-radius:100px;
-    padding:17px 34px;
-    font-size:15px;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.btn-primary{
-    background:#fff;
-    color:#000;
-}
-
-.btn-primary:hover{
-    background:#d8d8d8;
-}
-
-.btn-secondary{
-    background:rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.14);
-    color:#fff;
-}
-
-.btn-secondary:hover{
-    background:rgba(255,255,255,0.2);
-}
-
-
-
-/* =========================================================
-CONTACT
-========================================================= */
-
-.btn-whatsapp{
-    display:inline-block;
-    padding:14px 22px;
-
-    background:#25D366;
-    color:#fff;
-
-    border-radius:14px;
-
-    text-decoration:none;
-    font-weight:600;
-
-    transition:0.3s;
-}
-
-.btn-whatsapp:hover{
-    transform:translateY(-3px);
-    background:#1ebe5d;
-}
-
-
-.contact{
-    padding:180px 20px;
-    text-align:center;
-}
-
-.contact h2{
-    font-size:84px;
-    line-height:1.05;
-    margin-top:30px;
-    letter-spacing:-5px;
-}
-
-.contact p{
-    max-width:950px;
-    margin:auto;
-    margin-top:40px;
-    color:#bdbdbd;
-    font-size:24px;
-    line-height:1.8;
-}
-
-.contact button{
-    margin-top:50px;
-    border:none;
-    background:#fff;
-    color:#000;
-    border-radius:100px;
-    padding:20px 42px;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-}
-
-/* =========================================================
-RESPONSIVE
-========================================================= */
-
-@media(max-width:1200px){
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .offers-grid{
-        grid-template-columns:1fr;
-    }
-
-    .services-icons{
-        flex-wrap:wrap;
-    }
-
-    .services-item{
-        flex:1 0 25%;
-        margin-bottom:35px;
-    }
-
-    .hero h1,
-    .contact h2,
-    .section-title h2{
-        font-size:58px;
-    }
-
-    .navbar{
-        padding:24px 25px;
-        flex-wrap:wrap;
-        gap:25px;
-    }
-
-    .nav-center{
-        gap:24px;
-    }
-
-}
-
-@media(max-width:700px){
-
-    .services-item{
-        flex:1 0 50%;
-    }
-
-    .nav-center{
-        display:none;
-    }
-
-    .hero{
-        padding-top:190px;
-    }
-
-    .hero h1{
-        font-size:48px;
-    }
-
-    .hero p{
-        font-size:18px;
-    }
-
-    .content{
-        left:35px;
-        right:35px;
-        bottom:40px;
-    }
-
-    .content h2{
-        font-size:42px;
-    }
-
-    .card{
-        height:620px;
-    }
-
-}
-
-/* =========================
-FOOTER 
-========================= */
-
-.footer{
-    background:#050505;
-    padding:90px 60px 30px;
-    border-top:1px solid rgba(255,255,255,0.08);
-}
-
-.footer-container{
-    max-width:1600px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:70px;
-}
-
-/* COL */
-.footer-col h3{
-    font-size:20px;
-    margin-bottom:18px;
-    letter-spacing:-1px;
-}
-
-.footer-col p{
-    color:#aaa;
-    line-height:1.8;
-    font-size:14px;
-    margin-bottom:20px;
-}
-
-/* SOCIAL ICONS */
-.footer-socials{
-    display:flex;
-    gap:15px;
-    margin-top:20px;
-}
-
-.footer-socials i{
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:rgba(255,255,255,0.06);
-    color:#ccc;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.footer-socials i:hover{
-    background:#fff;
-    color:#000;
-    transform:translateY(-3px);
-}
-
-/* CONTACT ITEMS */
-.footer-item{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:14px;
-    color:#aaa;
-    font-size:14px;
-}
-
-.footer-item i{
-    color:#fff;
-}
-
-/* LINKS */
-.footer-col a{
-    display:block;
-    color:#aaa;
-    text-decoration:none;
-    margin-bottom:10px;
-    font-size:14px;
-    transition:0.3s;
-}
-
-.footer-col a:hover{
-    color:#fff;
-}
-
-/* SUBFOOTER */
-.subfooter{
-    max-width:1600px;
-    margin:60px auto 0;
-    padding-top:25px;
-    border-top:1px solid rgba(255,255,255,0.08);
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    color:#777;
-    font-size:13px;
-}
-
-
-/* RESPONSIVE */
-@media(max-width:900px){
-
-    .footer-container{
-        grid-template-columns:1fr;
-    }
-
-    .subfooter{
-        flex-direction:column;
-        gap:10px;
-        text-align:center;
-    }
-}
-
-/* =========================================================
-RESPONSIVE
-========================================================= */
-
-@media(max-width:1100px){
-
-    .nav-links,
-    .right-nav{
-        display:none;
-    }
-
-    .hamburger{
-        display:block;
-    }
-
-    .navbar{
-        padding:20px 25px;
-    }
-
-    .services-icons{
-        grid-template-columns:repeat(4,1fr);
-    }
-
-}
-
-@media(max-width:600px){
-    .services-icons{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-
-
-/* CONTENEDOR */
-.contact-zones{
-    text-align:center;
-    padding:40px;
-}
-
-/* DESTACADO */
-.main-location{
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    padding:14px 24px;
-    border-radius:100px;
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.12);
-    margin-bottom:35px;
-    backdrop-filter:blur(10px);
-}
-
-.main-location i{
-    font-size:18px;
-    color:#fff;
-}
-
-.main-location span{
-    font-size:18px;
-    font-weight:600;
-    letter-spacing:-0.5px;
-}
-
-/* OTRAS POBLACIONES */
-.zones-list{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-}
-
-.zones-list span{
-    padding:10px 16px;
-    border-radius:100px;
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.08);
-    font-size:13px;
-    color:#cfcfcf;
-    transition:0.25s;
-}
-
-.zones-list span:hover{
-    background:rgba(255,255,255,0.14);
-    color:#fff;
-    transform:translateY(-3px);
-}
-
-/* =========================================================
-LEGAL MODAL
-========================================================= */
-
-.legal-modal{
-    position:fixed;
-    inset:0;
-    width:100%;
-    height:100vh;
-
-    background:rgba(0,0,0,0.75);
-    backdrop-filter:blur(10px);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    opacity:0;
-    visibility:hidden;
-    transition:0.3s ease;
-
-    z-index:9999;
-}
-
-.legal-modal.active{
-    opacity:1;
-    visibility:visible;
-}
-
-.legal-modal-content{
-    width:90%;
-    max-width:700px;
-
-    background:#0b0b0b;
-    border:1px solid rgba(255,255,255,0.08);
-
-    border-radius:28px;
-
-    padding:50px;
-
-    position:relative;
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,0.5);
-}
-
-/* TITLE */
-.legal-modal-content h2{
-    font-size:34px;
-    margin-bottom:25px;
-    letter-spacing:-1px;
-}
-
-/* TEXT */
-.legal-modal-content p{
-    color:#aaa;
-    line-height:1.8;
-    margin-bottom:20px;
-    font-size:15px;
-}
-
-/* CLOSE */
-.close-legal{
-    position:absolute;
-    top:25px;
-    right:25px;
-
-    width:42px;
-    height:42px;
-
-    border-radius:50%;
-    background:rgba(255,255,255,0.06);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.close-legal:hover{
-    background:#fff;
-    color:#000;
-}
-
-/* INFO */
-.legal-info{
-    margin:30px 0;
-}
-
-.legal-item{
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    margin-bottom:16px;
-
-    color:#ddd;
-}
-
-.legal-item i{
-    width:18px;
-    color:#fff;
-}
-
-/* MOBILE */
-@media(max-width:700px){
-
-    .legal-modal-content{
-        padding:35px 25px;
-    }
-
-    .legal-modal-content h2{
-        font-size:28px;
-    }
-
-
-
-}
-
-
-/* =========================================================
-MODAL  Issue
-========================================================= */
-
-/* MODAL BASE */
-.issue-Modal{
-    position:fixed;
-    inset:0;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:rgba(0,0,0,0.78);
-    backdrop-filter:blur(14px);
-
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-
-    transition:0.3s ease;
-
-    z-index:9999;
-}
-
-/* ACTIVE */
-.issue-Modal.active{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
-}
-
-/* CONTENT */
-.issue-Modal .modal-content{
-    width:92%;
-    max-width:700px;
-
-    background:#0b0b0b;
-    border:1px solid rgba(255,255,255,0.08);
-
-    border-radius:26px;
-    padding:40px;
-
-    position:relative;
-
-    animation:modalIn 0.25s ease;
-}
-
-/* CLOSE BUTTON */
-.close-modal{
-    position:absolute;
-    top:18px;
-    right:18px;
-
-    width:42px;
-    height:42px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:rgba(255,255,255,0.06);
-
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.close-modal:hover{
-    background:#fff;
-    color:#000;
-    transform:rotate(90deg);
-}
-
-/* ANIMATION FIX */
-@keyframes modalIn{
-    from{
-        transform:translateY(20px) scale(0.98);
-        opacity:0;
-    }
-    to{
-        transform:translateY(0) scale(1);
-        opacity:1;
-    }
-}
-
-/* Ini: Scroll Top botón */
-.scroll-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #ff2d55;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
-    z-index: 1000;
-}
-
-.scroll-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.mouse {
-    width: 22px;
-    height: 34px;
-    border: 2px solid #fff;
-    border-radius: 20px;
-    position: relative;
-}
-
-.mouse::after {
-    content: '';
-    width: 4px;
-    height: 8px;
-    background: #fff;
-    border-radius: 10px;
-
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    animation: scrollWheel 1.5s infinite;
-}
-
-@keyframes scrollWheel {
-    0% {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(-50%, 10px);
-    }
-}
-/* End: Scroll Top botón */
-
-/* INI: Customers */
-/* =========================================================
-
-========================================================= */
-
-.clients-section{
-    padding:140px 40px;
-    background:#050505;
-}
-
-.clients-header{
-    text-align:center;
-    max-width:850px;
-    margin:auto;
-    margin-bottom:70px;
-}
-
-.clients span{
-    color:#8b8b8b;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    font-size:13px;
-}
-
-
-
-/* TITLE */
-
-.clients-header h2{
-    font-size:58px;
-    letter-spacing:-2px;
-    margin-bottom:18px;
-}
-
-.clients-header p{
-    color:#999;
-    font-size:17px;
-    line-height:1.7;
-}
-
-/* GRID */
-
-.clients-grid{
-    max-width:1250px;
-    margin:auto;
-}
-
-/* CARD */
-
-.client-card{
-    background:#0b0b0b;
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    border-radius:32px;
-
-    overflow:hidden;
-
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-
-    transition:0.35s;
-}
-
-.client-card:hover{
-    transform:translateY(-6px);
-
-    border-color:rgba(0,122,255,0.25);
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,0.45);
-}
-
-/* IMAGE */
-
-.client-image{
-    height:100%;
-    overflow:hidden;
-}
-
-.client-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-
-    transition:0.4s;
-}
-
-.client-card:hover img{
-    transform:scale(1.04);
-}
-
-/* CONTENT */
-
-.client-content{
-    padding:55px;
-}
-
-/* TYPE */
-
-.client-type{
-    display:inline-block;
-
-    padding:8px 14px;
-
-    border-radius:999px;
-
-    background:rgba(255,255,255,0.06);
-
-    color:#ccc;
-
-    font-size:12px;
-
-    margin-bottom:24px;
-}
-
-/* TITLE */
-
-.client-content h3{
-    font-size:42px;
-    letter-spacing:-1px;
-
-    margin-bottom:20px;
-}
-
-/* TEXT */
-
-.client-content p{
-    color:#aaa;
-    line-height:1.8;
-    margin-bottom:32px;
-
-    font-size:15px;
-}
-
-/* TAGS */
-
-.client-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-
-    margin-bottom:40px;
-}
-
-.client-tags span{
-    padding:9px 15px;
-
-    border-radius:999px;
-
-    background:rgba(0,122,255,0.12);
-    border:1px solid rgba(0,122,255,0.22);
-
-    color:#4da3ff;
-
-    font-size:12px;
-    font-weight:500;
-}
-
-/* BUTTON */
-
-.client-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-
-    text-decoration:none;
-
-    padding:15px 24px;
-
-    border-radius:16px;
-
-    background:#fff;
-    color:#000;
-
-    font-weight:600;
-
-    transition:0.3s;
-}
-
-.client-btn:hover{
-    transform:translateY(-3px);
-    opacity:0.92;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-    .real-client-card{
-        grid-template-columns:1fr;
-    }
-
-    .client-image{
-        height:320px;
-    }
-
-}
-
-@media(max-width:700px){
-
-    .real-clients-section{
-        padding:100px 20px;
-    }
-
-    .real-clients-header h2{
-        font-size:38px;
-    }
-
-    .client-content{
-        padding:35px;
-    }
-
-    .client-content h3{
-        font-size:32px;
-    }
-
-}
+                    <!-- SKILLS -->
+                    <div class="skills-services">
+
+                        <span data-es="Inyección SQL" data-en="SQL Injection" data-ca="Injecció SQL"
+                            data-de="SQL-Injektion">
+                        </span>
+
+                        <span data-es="Prevención de ataques" data-en="Attack prevention" data-ca="Prevenció d'atacs"
+                            data-de="Angriffsprävention">
+                        </span>
+
+                        <span data-es="Cifrado" data-en="Encryption" data-ca="Xifrat" data-de="Verschlüsselung">
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Section CUSTOMERS  -->
+    <section id="customers" class="clients-section">
+
+        <div class="clients-header">
+
+
+            <span class="badge" data-es="Clientes" data-en="Clients" data-ca="Clients" data-de="Kunden">
+            </span>
+
+            <h2 data-es="Proyectos realizados" data-en="Completed projects" data-ca="Projectes realitzats"
+                data-de="Abgeschlossene Projekte">
+            </h2>
+
+            <p data-es="Algunos trabajos y desarrollos realizados para clientes particulares y negocios"
+                data-en="Some work and projects completed for individuals and businesses"
+                data-ca="Alguns treballs i projectes realitzats per a particulars i negocis"
+                data-de="Einige Arbeiten und Projekte für Privatkunden und Unternehmen">
+            </p>
+
+        </div>
+
+        <div class="clients-grid">
+
+
+            <div class="client-card">
+
+
+                <div class="client-image">
+
+
+                    <img src="img/costafitcalella.png" alt="costafitcalella">
+
+                </div>
+
+            
+                <div class="client-content">
+
+                   <span class="client-type"
+    data-es="Página web"
+    data-en="Website"
+    data-ca="Pàgina web"
+    data-de="Webseite">
+</span>
+
+                    <h3>
+                        Costa Fit Calella
+                    </h3>
+
+                   <p
+    data-es="Centro de artes marciales y bienestar en Calella, combinando entrenamiento, salud y osteopatía para un equilibrio físico completo."
+    data-en="Martial arts and wellness center in Calella, combining training, health and osteopathy for full physical balance."
+    data-ca="Centre d'arts marcials i benestar a Calella, combinant entrenament, salut i osteopatia per a un equilibri físic complet."
+    data-de="Kampfsport- und Wellnesszentrum in Calella, das Training, Gesundheit und Osteopathie für ein vollständiges körperliches Gleichgewicht kombiniert.">
+</p>
+
+                    <!-- TAGS -->
+                    <div class="client-tags">
+                        <span>HTML5</span>
+                        <span>CSS</span>
+                        <span>JS</span>
+                        <span>Bootstrap</span>
+                    </div>
+
+                    <!-- BUTTON -->
+                  <a href="https://www.costafitcalella.com" target="_blank" class="client-btn">
+
+    <span
+        data-es="Ver proyecto"
+        data-en="View project"
+        data-ca="Veure projecte"
+        data-de="Projekt ansehen">
+    </span>
+
+    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Section CONTACT  -->
+
+    <section id="contact" class="contact">
+
+        <span class="badge">Contacto</span>
+
+        <h2 data-es="Contacta conmigo" data-en="Contact me" data-ca="Contacta amb mi" data-de="Kontaktiere mich">
+        </h2>
+        <p data-es="Cuéntame qué necesitas y te ayudaré a solucionarlo."
+            data-en="Tell me what you need and I will help you solve it."
+            data-ca="Explica’m què necessites i t’ajudaré a solucionar-ho."
+            data-de="Erzähl mir, was du brauchst, und ich helfe dir bei der Lösung.">
+        </p>
+        <div class="contact-zones">
+
+            <!-- DESTACADO -->
+            <div class="main-location">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Arenys de Mar</span>
+            </div>
+
+            <!-- OTRAS ZONAS -->
+            <div class="zones-list">
+                <span>Sant Iscle</span>
+                <span>Sant Cebriá</span>
+                <span>Canet de Mar</span>
+                <span>Sant Pol de Mar</span>
+                <span>Caldes d'Estrac</span>
+                <span>LLavaneras</span>
+                <span>Arenys de Munt</span>
+            </div>
+
+        </div>
+
+        <a class="btn-whatsapp" href="https://wa.me/34659071359" target="_blank" data-es="Contactar ahora"
+            data-en="Contact now" data-ca="Contactar ara" data-de="Jetzt kontaktieren">
+        </a>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- Social media -->
+            <div class="footer-col">
+                <h3>scordero</h3>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/scorderoIT/" target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- CONTACTO -->
+            <div class="footer-col">
+
+                <h3 data-es="Contacto" data-en="Contact" data-ca="Contacte" data-de="Kontakt">
+                </h3>
+
+                <div class="footer-item">
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span> contacto@scordero.com </span>
+                </div>
+
+                <div class="footer-item">
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span data-es="Arenys de Mar, Barcelona" data-en="Arenys de Mar, Barcelona"
+                        data-ca="Arenys de Mar, Barcelona" data-de="Arenys de Mar, Barcelona">
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- LEGAL -->
+            <div class="footer-col">
+
+                <h3 data-es="Legal" data-en="Legal" data-ca="Legal" data-de="Rechtliches">
+                </h3>
+
+                <a href="#" id="openLegalModal" data-es="Aviso legal" data-en="Legal notice" data-ca="Avís legal"
+                    data-de="Impressum">
+                </a>
+
+                <a href="#" id="openPrivacyModal" data-es="Privacidad" data-en="Privacy" data-ca="Privacitat"
+                    data-de="Datenschutz">
+                </a>
+
+            </div>
+
+            <!-- SUBFOOTER -->
+            <div class="subfooter">
+
+                <div>© 2026 scordero. All rights reserved.</div>
+
+            </div>
+
+    </footer>
+
+
+
+    <!-- MODAL PRIVACIDAD -->
+    <div class="legal-modal" id="privacyModal">
+
+        <div class="legal-modal-content">
+
+            <!-- CLOSE -->
+            <div class="close-legal" id="closePrivacyModal">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <!-- CONTENT -->
+            <h2>Política de privacidad</h2>
+
+            <p>
+                La privacidad de los usuarios es importante para nosotros.
+                Los datos personales facilitados a través de este sitio web serán
+                tratados de forma confidencial y utilizados únicamente para atender
+                solicitudes de contacto o prestar los servicios solicitados.
+            </p>
+
+            <div class="legal-info">
+
+                <div class="legal-item">
+                    <i class="fa-solid fa-shield"></i>
+                    <span>Protección de datos segura</span>
+                </div>
+
+                <div class="legal-item">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Información tratada confidencialmente</span>
+                </div>
+
+                <div class="legal-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>No compartimos datos con terceros</span>
+                </div>
+
+            </div>
+
+            <p>
+                Los usuarios podrán ejercer sus derechos de acceso, rectificación,
+                cancelación y oposición enviando una solicitud mediante correo
+                electrónico.
+            </p>
+
+            <p>
+                Este sitio web puede utilizar cookies técnicas necesarias para
+                garantizar el correcto funcionamiento de la página.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="issue-Modal" id="issueModal">
+
+        <div class="modal-content">
+
+            <!-- CLOSE -->
+            <div class="close-legal" id="closeIssueModal">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <h2>Resolución de incidencias</h2>
+
+            <p>Servicios y precios orientativos:</p>
+
+            <ul class="price-list">
+
+                <li><strong>Formateo de PC:</strong> 50€</li>
+                <li><strong>Eliminación de virus:</strong> 40€</li>
+                <li><strong>PC lento / optimización:</strong> 45€</li>
+                <li><strong>No enciende el ordenador:</strong> 60€</li>
+                <li><strong>Problemas de internet:</strong> 35€</li>
+                <li><strong>Recuperación de datos:</strong> 70€</li>
+                <li><strong>Instalación Windows:</strong> 50€</li>
+                <li><strong>Configuración impresoras:</strong> 30€</li>
+
+            </ul>
+
+            <div class="price">
+                Servicio a domicilio en el Maresme
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="legal-modal" id="legalModal">
+
+        <div class="legal-modal-content">
+
+            <!-- CLOSE -->
+            <div class="close-legal" id="closeLegalModal">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <!-- CONTENT -->
+            <h2>Aviso legal</h2>
+
+            <p>
+                En cumplimiento del deber de información recogido en la Ley
+                34/2002, de Servicios de la Sociedad de la Información y Comercio
+                Electrónico (LSSI-CE), se informa que este sitio web pertenece a:
+            </p>
+
+            <div class="legal-info">
+
+                <div class="legal-item">
+                    <i class="fa-solid fa-user"></i>
+                    <span>scordero</span>
+                </div>
+
+                <div class="legal-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Arenys de Mar, Barcelona</span>
+                </div>
+
+                <div class="legal-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>ironh4sh@gmail.com</span>
+                </div>
+
+            </div>
+
+            <p>
+                El acceso y uso de este sitio web atribuye la condición de usuario,
+                aceptando desde dicho acceso las presentes condiciones de uso.
+            </p>
+
+            <p>
+                Todos los contenidos, diseños, textos e imágenes son propiedad de
+                sus respectivos titulares y están protegidos por la normativa
+                vigente.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="scroll-top" id="scrollTop">
+        <div class="mouse"></div>
+    </div>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
