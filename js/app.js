@@ -1,25 +1,47 @@
-/* =========================
-Ini: Language active
-========================= */
+/* =========================================================
+MOBILE MENU
+========================================================= */
 
-let lang =
-localStorage.getItem("lang")
-|| navigator.language.slice(0,2);
+function toggleMenu(){
 
-if(!["es","en","ca","de"].includes(lang)){
-    lang = "es";
+    const menu =
+    document.getElementById("mobileMenu");
+
+    menu.classList.toggle("active");
+
+    /* BLOCK SCROLL */
+    document.body.classList.toggle("menu-open");
+
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    setLanguage(lang);
+/* CLOSE MENU ON SCROLL */
+window.addEventListener("scroll", () => {
+
+    const menu =
+    document.getElementById("mobileMenu");
+
+    if(menu.classList.contains("active")){
+
+        menu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+    }
+
 });
+
+
+/* =========================================================
+LANGUAGE
+========================================================= */
 
 function setLanguage(lang){
 
-    /* TEXTS */
+    /* CHANGE TEXTS */
     document.querySelectorAll("[data-es]").forEach(el => {
 
-        const text = el.getAttribute("data-" + lang);
+        const text =
+        el.getAttribute("data-" + lang);
 
         if(text){
             el.innerText = text;
@@ -27,7 +49,7 @@ function setLanguage(lang){
 
     });
 
-    /* SAVE */
+    /* SAVE LANGUAGE */
     localStorage.setItem("lang", lang);
 
     /* REMOVE ACTIVE */
@@ -35,10 +57,10 @@ function setLanguage(lang){
         btn.classList.remove("active");
     });
 
-    /* ADD ACTIVE */
+    /* ACTIVE CURRENT */
     document.querySelectorAll(".lang").forEach(btn => {
 
-        if(btn.textContent.toLowerCase() === lang){
+        if(btn.dataset.lang === lang){
             btn.classList.add("active");
         }
 
@@ -46,147 +68,201 @@ function setLanguage(lang){
 
 }
 
-/* =========================
-End: Language active
-========================= */
+/* AUTO LANGUAGE */
+let lang =
+localStorage.getItem("lang")
+|| navigator.language.slice(0,2);
 
-
-function toggleMenu(){
-    document.getElementById("mobileMenu")
-    .classList.toggle("active");
-}
-
-function toggleMenu(){
-
-    document
-    .getElementById("mobileMenu")
-    .classList.toggle("active");
-
-}
-
-/* =========================
-Ini: Language
-========================= */
-
-function setLanguage(lang){
-
-    document.querySelectorAll("[data-es]").forEach(el => {
-
-        const text = el.getAttribute("data-" + lang);
-
-        if(text){
-            el.innerText = text;
-        }
-
-    });
-
-    localStorage.setItem("lang", lang);
-}
-
-/* AUTO DETECT */
-let lang = localStorage.getItem("lang") || navigator.language.slice(0,2);
-
+/* DEFAULT */
 if(!["es","en","de","ca"].includes(lang)){
     lang = "es";
 }
 
-setLanguage(lang);
+/* LOAD */
+document.addEventListener("DOMContentLoaded", () => {
 
-/* =========================
-End: Language
-========================= */
+    setLanguage(lang);
 
-/* =========================
-Ini: Scroll Top
-========================= */
-const scrollTopBtn = document.getElementById('scrollTop');
+});
 
-const expandBtns = document.querySelectorAll('.expand-btn');
 
+/* =========================================================
+SCROLL TOP
+========================================================= */
+
+const scrollTopBtn =
+document.getElementById("scrollTop");
+
+const expandBtns =
+document.querySelectorAll(".expand-btn");
+
+/* EXPAND CARDS */
 expandBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+
+    btn.addEventListener("click", () => {
+
         const card = btn.parentElement;
-        card.classList.toggle('active');
+
+        card.classList.toggle("active");
+
     });
+
 });
 
+/* SHOW BUTTON */
+window.addEventListener("scroll", () => {
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollTopBtn.classList.add('show');
-    } else {
-        scrollTopBtn.classList.remove('show');
+    if(window.scrollY > 300){
+
+        scrollTopBtn.classList.add("show");
+
+    }else{
+
+        scrollTopBtn.classList.remove("show");
+
     }
+
 });
 
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+/* SCROLL TOP */
+if(scrollTopBtn){
+
+    scrollTopBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
     });
-});
-/* =========================
-End: Scroll Top
-========================= */
+
+}
 
 
-/* =========================
-Privacy Modal
-========================= */
+/* =========================================================
+PRIVACY MODAL
+========================================================= */
 
-const openPrivacyBtn = document.getElementById("openPrivacyModal");
-const closePrivacyBtn = document.getElementById("closePrivacyModal");
-const privacyModal = document.getElementById("privacyModal");
+const openPrivacyBtn =
+document.getElementById("openPrivacyModal");
 
+const closePrivacyBtn =
+document.getElementById("closePrivacyModal");
+
+const privacyModal =
+document.getElementById("privacyModal");
+
+/* OPEN */
 if(openPrivacyBtn && privacyModal){
+
     openPrivacyBtn.addEventListener("click", () => {
+
         privacyModal.classList.add("active");
+
     });
+
 }
 
+/* CLOSE */
 if(closePrivacyBtn && privacyModal){
+
     closePrivacyBtn.addEventListener("click", () => {
+
         privacyModal.classList.remove("active");
+
     });
+
 }
 
-/* =========================
-Legal Modal 
-========================= */
 
-const openLegal = document.getElementById("openLegalModal");
-const closeLegal = document.getElementById("closeLegalModal");
-const legalModal = document.getElementById("legalModal");
+/* =========================================================
+LEGAL MODAL
+========================================================= */
 
+const openLegal =
+document.getElementById("openLegalModal");
+
+const closeLegal =
+document.getElementById("closeLegalModal");
+
+const legalModal =
+document.getElementById("legalModal");
+
+/* OPEN */
 if(openLegal && legalModal){
+
     openLegal.addEventListener("click", function(e){
+
         e.preventDefault();
+
         legalModal.classList.add("active");
+
     });
+
 }
 
+/* CLOSE */
 if(closeLegal && legalModal){
+
     closeLegal.addEventListener("click", () => {
+
         legalModal.classList.remove("active");
+
     });
+
 }
 
 
-/* =========================
-Issue Modal
-========================= */
-const openIssueBtn = document.getElementById("openIssueModal");
-const closeIssueBtn = document.getElementById("closeIssueModal");
-const issueModal = document.getElementById("issueModal");
+/* =========================================================
+ISSUE MODAL
+========================================================= */
 
+const openIssueBtn =
+document.getElementById("openIssueModal");
+
+const closeIssueBtn =
+document.getElementById("closeIssueModal");
+
+const issueModal =
+document.getElementById("issueModal");
+
+/* OPEN */
 if(openIssueBtn && issueModal){
+
     openIssueBtn.addEventListener("click", () => {
+
         issueModal.classList.add("active");
+
     });
+
 }
 
+/* CLOSE */
 if(closeIssueBtn && issueModal){
+
     closeIssueBtn.addEventListener("click", () => {
+
         issueModal.classList.remove("active");
+
     });
+
 }
+
+
+/* =========================================================
+CLOSE MODALS CLICK OUTSIDE
+========================================================= */
+
+window.addEventListener("click", function(e){
+
+    document.querySelectorAll(".modal").forEach(modal => {
+
+        if(e.target === modal){
+
+            modal.classList.remove("active");
+
+        }
+
+    });
+
+});
