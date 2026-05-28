@@ -1,608 +1,673 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>&lt;scordero/&gt; </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&lt;scordero/&gt; </title>
 
-<link rel="stylesheet" href="css/style.css">
+    <meta name="description"
+        content="Soporte informático, reparación de ordenadores, desarrollo web, redes y asistencia técnica para particulares y pymes en Arenys de Mar y el Maresme.">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <meta name="keywords"
+        content="soporte informático Arenys de Mar, reparación ordenadores Maresme, técnico informático Mataró, desarrollo web Maresme, programación web Arenys, asistencia remota, mantenimiento informático, redes wifi, soporte IT particulares, soporte IT pymes">
+
+    <meta name="author" content="scordero">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="language" content="es">
+
+    <meta name="revisit-after" content="7 days">
+
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://www.scordero.com/">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- OPEN GRAPH (FACEBOOK / WHATSAPP) -->
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:title" content="Soporte Informático y Desarrollo Web en el Maresme">
+
+    <meta property="og:description"
+        content="Soluciones IT, reparación de ordenadores, programación web y asistencia técnica para particulares y pequeñas empresas del Maresme.">
+
+    <meta property="og:image" content="https://www.tudominio.com/img/seo-cover.jpg">
+
+    <meta property="og:url" content="https://www.tudominio.com/">
+
+    <meta property="og:site_name" content="scordero">
+
+    <meta property="og:locale" content="es_ES">
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
-    
+
 <body>
 
-<!-- HEADER -->
-<header>
+    <!-- HEADER -->
+    <header>
 
-    <div class="navbar">
+        <div class="navbar">
 
-        <!-- LOGO -->
-        <div class="logo">&lt;scordero/&gt;</div>
+            <!-- LOGO -->
+            <a href="/" class="logo">
+                &lt;<span>sc</span>ordero/&gt;
+            </a>
 
-        <!-- MENU -->
-        <nav class="nav-center" aria-label="main navigation">
-            <a href="#">Inicio</a>
-            <a href="#services">Servicios</a>
-            <a href="#customers">Clientes</a>
-            <a href="#contact">Contacto</a>
-        </nav>
+            <!-- MENU -->
+            <nav class="nav-center" aria-label="main navigation">
+                <a href="#" data-es="Inicio" data-en="Home" data-ca="Inici" data-de="Start"></a>
 
-        <!-- RIGHT -->
-        <div class="nav-right">
+                <a href="#services" data-es="Servicios" data-en="Services" data-ca="Serveis"
+                    data-de="Dienstleistungen"></a>
 
-            <div class="languages">
-                <div class="lang">ES</div>
-                <div class="lang">EN</div>
-                <div class="lang">CAT</div>
-                <div class="lang">DE</div>
+                <a href="#customers" data-es="Clientes" data-en="Clients" data-ca="Clients" data-de="Kunden"></a>
+
+                <a href="#contact" data-es="Contacto" data-en="Contact" data-ca="Contacte" data-de="Kontakt"></a>
+            </nav>
+
+            <!-- RIGHT -->
+            <div class="nav-right">
+
+                <div class="languages">
+                    <div class="lang" onclick="setLanguage('es')">ES</div>
+                    <div class="lang" onclick="setLanguage('en')">EN</div>
+                    <div class="lang" onclick="setLanguage('ca')">CAT</div>
+                    <div class="lang" onclick="setLanguage('de')">DE</div>
+                </div>
+
+                <div class="socials">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/scorderoIT/" target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+
             </div>
 
-            <div class="socials">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-linkedin-in"></i>
+            <!-- HAMBURGER -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
             </div>
 
         </div>
 
-        <!-- HAMBURGER -->
-        <div class="hamburger" onclick="toggleMenu()">
-            <i class="fa-solid fa-bars"></i>
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="close-menu" onclick="toggleMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <a href="#" data-es="Inicio" data-en="Home" data-ca="Inici" data-de="Start"></a>
+
+            <a href="#services" data-es="Servicios" data-en="Services" data-ca="Serveis" data-de="Dienstleistungen"></a>
+
+            <a href="#customers" data-es="Clientes" data-en="Clients" data-ca="Clients" data-de="Kunden"></a>
+
+            <a href="#contact" data-es="Contacto" data-en="Contact" data-ca="Contacte" data-de="Kontakt"></a>
+
         </div>
 
-    </div>
+    </header>
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
+    <!-- ICONS SERVICES -->
 
-        <div class="close-menu" onclick="toggleMenu()">
-            <i class="fa-solid fa-xmark"></i>
+    <section class="services-icons">
+    
+    
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="label" data-es="Desarrollo software" data-en="Software development"
+                data-ca="Desenvolupament de programari" data-de="Softwareentwicklung">
+            </div>
+        </div>
+    
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="label" data-es="Automatizaciones" data-en="Automations" data-ca="Automatitzacions"
+                data-de="Automatisierung">
+            </div>
+        </div>
+    
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+            <div class="label" data-es="Asistencia remota" data-en="Remote support" data-ca="Assistència remota"
+                data-de="Fernunterstützung">
+            </div>
+        </div>
+    
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-laptop"></i>
+            </div>
+            <div class="label" data-es="Reparación de PC" data-en="PC repair" data-ca="Reparació de PC"
+                data-de="PC-Reparatur">
+            </div>
+        </div>
+    
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <div class="label" data-es="Redes y conectividad" data-en="Networks & connectivity"
+                data-ca="Xarxes i connectivitat" data-de="Netzwerke und Konnektivität">
+            </div>
+        </div>
+    
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-plug"></i>
+            </div>
+            <div class="label" data-es="Configuración de hardware" data-en="Hardware setup"
+                data-ca="Configuració de maquinari" data-de="Hardware-Konfiguration">
+            </div>
+        </div>
+    
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-shield"></i>
+            </div>
+            <div class="label" data-es="Seguridad web básica" data-en="Basic web security" data-ca="Seguretat web bàsica"
+                data-de="Grundlegende Websicherheit">
+            </div>
+        </div>
+    
+        <div class="services-item">
+            <div class="icon-circle">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="label" data-es="Formación básica" data-en="Basic training" data-ca="Formació bàsica"
+                data-de="Grundausbildung">
+            </div>
+        </div>
+    
+    
+    </section>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">Servicios informáticos</span>
+
+            <h1>
+                Tecnología sin complicaciones
+            </h1>
+
+            <p>
+                Ayuda tecnológica para particulares y pymes: reparación de ordenadores, programación y soporte en el
+                Maresme.
+            </p>
+
+
         </div>
 
-        <a href="#">Inicio</a>
-        <a href="#">Servicios</a>
-        <a href="#">Ofertas</a>
-        <a href="#">Contacto</a>
-
-    </div>
-
-</header>
-
-<!-- ICONS SERVICES -->
-
-<section class="services-icons">
-
-    <div class="services-item">
-        <div class="icon-circle">
-            <i class="fa-solid fa-code"></i>
-        </div>
-        <div class="label">Desarrollo software</div>
-    </div>
-
-    <div class="services-item">
-        <div class="icon-circle">
-            <i class="fa-solid fa-robot"></i>
-        </div>
-        <div class="label">Automatizaciones</div>
-    </div>
-
-    <div class="services-item">
-        <div class="icon-circle">
-            <i class="fa-solid fa-headset"></i>
-        </div>
-        <div class="label">Asistencia remota</div>
-    </div>
-
-    <div class="services-item">
-        <div class="icon-circle">
-            <i class="fa-solid fa-laptop"></i>
-        </div>
-        <div class="label">Reparación pc</div>
-    </div>
-
-    <div class="services-item">
-        <div class="icon-circle">
-            <i class="fa-solid fa-network-wired"></i>
-        </div>
-        <div class="label">Redes y conectividad</div>
-    </div>
-
-    <div class="services-item">
-        <div class="icon-circle">
-            <i class="fa-solid fa-plug"></i>
-        </div>
-        <div class="label">Configuración hardware</div>
-    </div>
-
-    <div class="services-item">
-        <div class="icon-circle">
-            <i class="fa-solid fa-shield"></i>
-        </div>
-        <div class="label">Seguridad web básica</div>
-    </div>
-
-    <div class="services-item">
-        <div class="icon-circle">
-            <i class="fa-solid fa-graduation-cap"></i>
-        </div>
-        <div class="label">Formación básica</div>
-    </div>
-
-</section>
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <span class="badge">Servicios informáticos</span>
-
-        <h1>
-           Tecnología sin complicaciones
-        </h1>
-
-        <p>
-          Ayuda tecnológica para particulares y pymes: reparación de ordenadores, programación y soporte en el Maresme.
-        </p>
-
-
-    </div>
-
-</section>
+    </section>
 
 
 
 
 
-<!-- SERVICES -->
+    <!-- SERVICES -->
 
-<section id="services" class="services">
+    <section id="services" class="services">
 
-    <div class="grid">
+        <div class="grid">
 
-        <div class="card">
+            <div class="card">
 
-            <img src="img/service-support.jpg">
+                <img src="img/service-support.jpg">
 
-            <div class="overlay"></div>
+                <div class="overlay"></div>
 
-            <div class="content">
+                <div class="content">
 
-                <h2>Soporte IT</h2>
+                    <h2>Soporte IT</h2>
 
-                <p>
-                   Resolución de incidencias y asistencia técnica para equipos informáticos y periféricos, garantizando que su puesto de trabajo se mantenga siempre operativo.
-                </p>
+                    <p>
+                        Resolución de incidencias y asistencia técnica para equipos informáticos y periféricos,
+                        garantizando que su puesto de trabajo se mantenga siempre operativo.
+                    </p>
 
-                 <!-- SKILLS -->
-                <div class="skills-services">
-                    <span>Soporte Remoto</span>
-                    <span>Mantenimiento</span>
-                    <span>Asesoría Personalizada</span>
-                    <span class="info-icon" id="openIssueModal">
+                    <!-- SKILLS -->
+                    <div class="skills-services">
+                        <span>Soporte Remoto</span>
+                        <span>Mantenimiento</span>
+                        <span>Asesoría Personalizada</span>
+                        <span class="info-icon" id="openIssueModal">
                             <i class="fa-solid fa-circle-info"></i>
                             Resolución de Incidencias
                         </span>
-                   
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <img src="img/service-security.jpg">
+
+                <div class="overlay"></div>
+
+                <div class="content">
+
+                    <h2>Optimización de Procesos</h2>
+
+                    <p>
+                        Automatización de procesos repetitivos para optimizar tu trabajo diario, reduciendo errores y
+                        mejorando la eficiencia de tu entorno digital.
+                    </p>
+
+                    <!-- SKILLS -->
+                    <div class="skills-services">
+                        <span>Automatización</span>
+                        <span>Scripts</span>
+                        <span>Integración de Sistemas</span>
+                        <span>Reducción de errores</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <img src="img/service-software.jpg">
+
+                <div class="overlay"></div>
+
+                <div class="content">
+
+                    <h2>Desarrollo</h2>
+
+                    <p>
+                        Desarrollo de aplicaciones web y soluciones digitales conectadas con tus sistemas y APIs para
+                        optimizar procesos y crear experiencias más eficientes.
+                    </p>
+
+                    <!-- SKILLS -->
+                    <div class="skills-services">
+                        <span>.NET</span>
+                        <span>SQL Server</span>
+                        <span>Azure</span>
+                        <span>Integración sistemas</span>
+                        <span>Web</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <img src="img/service-automation.jpg">
+
+                <div class="overlay"></div>
+
+                <div class="content">
+
+                    <h2>Ciberseguridad web</h2>
+
+                    <p>
+                        Revisión de la seguridad de tu web, corrigiendo vulnerabilidades y actualizando sistemas para
+                        proteger datos y procesos críticos.
+                    </p>
+
+                    <!-- SKILLS -->
+                    <div class="skills-services">
+                        <span>SQL Injection</span>
+                        <span>Prevención de Ataques</span>
+                        <span>Cifrado</span>
+                    </div>
+
+
+
                 </div>
 
             </div>
 
         </div>
 
-        <div class="card">
+    </section>
 
-            <img src="img/service-security.jpg">
 
-            <div class="overlay"></div>
+    <!-- Section CUSTOMERS  -->
+    <section id="customers" class="clients-section">
 
-            <div class="content">
+        <div class="clients-header">
 
-                <h2>Optimización de Procesos</h2>
+            <span class="badge">Clientes</span>
 
-                <p>
-                    Automatización de procesos repetitivos para optimizar tu trabajo diario, reduciendo errores y mejorando la eficiencia de tu entorno digital.
-                </p>
-                
-                <!-- SKILLS -->
-                <div class="skills-services">
-                    <span>Automatización</span>
-                    <span>Scripts</span>
-                    <span>Integración de Sistemas</span>
-                    <span>Reducción de errores</span>
+            <h2>
+                Proyectos realizados
+            </h2>
+
+            <p>
+                Algunos trabajos y desarrollos realizados para clientes
+                particulares y negocios
+            </p>
+
+        </div>
+
+        <div class="clients-grid">
+
+
+            <div class="client-card">
+
+
+                <div class="client-image">
+
+
+                    <img src="img/costafitcalella.png" alt="costafitcalella">
+
+                </div>
+
+                <!-- CONTENT -->
+                <div class="client-content">
+
+                    <span class="client-type">
+                        Página web
+                    </span>
+
+                    <h3>
+                        Costa Fit Calella
+                    </h3>
+
+                    <p>
+                        Centro de artes marciales y bienestar en Calella, combinando entrenamiento, salud y osteopatía
+                        para un equilibrio físico completo.
+                    </p>
+
+                    <!-- TAGS -->
+                    <div class="client-tags">
+                        <span>HTML5</span>
+                        <span>CSS</span>
+                        <span>JS</span>
+                        <span>Bootstrap</span>
+                    </div>
+
+                    <!-- BUTTON -->
+                    <a href="www.costafitcalella.com" target="_blank" class="client-btn">
+
+                        Ver proyecto
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
                 </div>
 
             </div>
 
         </div>
 
-        <div class="card">
+    </section>
 
-            <img  src="img/service-software.jpg">
 
-            <div class="overlay"></div>
+    <!-- Section CONTACT  -->
 
-            <div class="content">
+    <section id="contact" class="contact">
 
-                <h2>Desarrollo</h2>
-
-                <p>
-                    Desarrollo de aplicaciones web y soluciones digitales conectadas con tus sistemas y APIs para optimizar procesos y crear experiencias más eficientes.
-                </p>
-
-                <!-- SKILLS -->
-                <div class="skills-services">
-                    <span>.NET</span>
-                    <span>SQL Server</span>
-                    <span>Azure</span>
-                    <span>Integración sistemas</span>
-                    <span>Web</span>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="card">
-
-            <img src="img/service-automation.jpg">
-
-            <div class="overlay"></div>
-
-            <div class="content">
-
-                <h2>Ciberseguridad web</h2>
-
-                <p>
-                   Revisión de la seguridad de tu web, corrigiendo vulnerabilidades y actualizando sistemas para proteger datos y procesos críticos.
-                </p>
-
-                 <!-- SKILLS -->
-                <div class="skills-services">
-                    <span>SQL Injection</span>
-                    <span>Prevención de Ataques</span>
-                    <span>Cifrado</span>
-                </div>
-
-              
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section id="customers" class="real-clients-section">
-
-    <div class="real-clients-header">
-
-        <span class="mini-title">
-            Clientes 
-        </span>
+        <span class="badge">Contacto</span>
 
         <h2>
-            Proyectos realizados
+            Contacta conmigo
         </h2>
 
         <p>
-            Algunos trabajos y desarrollos realizados para clientes
-            particulares y negocios
+            Cuéntame qué necesitas y te ayudaré a solucionarlo.
         </p>
+        <div class="contact-zones">
 
-    </div>
+            <!-- DESTACADO -->
+            <div class="main-location">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Arenys de Mar</span>
+            </div>
 
-    <div class="real-clients-grid">
+            <!-- OTRAS ZONAS -->
+            <div class="zones-list">
+                <span>Sant Iscle</span>
+                <span>Sant Cebriá</span>
+                <span>Canet de Mar</span>
+                <span>Sant Pol de Mar</span>
+                <span>Caldes d'Estrac</span>
+                <span>LLavaneras</span>
+                <span>Arenys de Munt</span>
+            </div>
 
-        <!-- CLIENTE -->
-        <div class="real-client-card">
+        </div>
 
-            <!-- IMAGE -->
-            <div class="client-image">
+        <a class="btn-whatsapp" href="https://wa.me/34659071359" target="_blank">
+            Contactar ahora
+        </a>
 
-                <!-- CAMBIA ESTA IMAGEN -->
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
-                alt="Proyecto web">
+    </section>
 
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- BRAND -->
+            <div class="footer-col">
+                <h3>scordero</h3>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/scorderoIT/" target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-col">
+                <h3>Contacto</h3>
+
+                <div class="footer-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>contacto@scordero.com</span>
+                </div>
+
+                <div class="footer-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Arenys de Mar, Barcelona</span>
+                </div>
+
+                <!--  <div class="footer-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+34 600 000 000</span>
+                </div> -->
+            </div>
+
+            <!-- LEGAL -->
+            <div class="footer-col">
+                <h3>Legal</h3>
+
+                <a href="#" id="openLegalModal">Aviso legal</a>
+                <a href="#" id="openPrivacyModal">Privacidad</a>
+            </div>
+
+        </div>
+
+        <!-- SUBFOOTER -->
+        <div class="subfooter">
+
+            <div>© 2026 scordero. All rights reserved.</div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- MODAL PRIVACIDAD -->
+    <div class="legal-modal" id="privacyModal">
+
+        <div class="legal-modal-content">
+
+            <!-- CLOSE -->
+            <div class="close-legal" id="closePrivacyModal">
+                <i class="fa-solid fa-xmark"></i>
             </div>
 
             <!-- CONTENT -->
-            <div class="client-content">
+            <h2>Política de privacidad</h2>
 
-                <span class="client-type">
-                    Página web
-                </span>
-
-                <h3>
-                    Costa Fit Calella
-                </h3>
-
-                <p>
-                  Centro de artes marciales y bienestar en Calella, combinando entrenamiento, salud y osteopatía para un equilibrio físico completo.
-                </p>
-
-                <!-- TAGS -->
-                <div class="client-tags">
-                    <span>HTML5</span>
-                    <span>CSS</span>
-                    <span>JS</span>
-                    <span>Bootstrap</span>
-                </div>
-
-                <!-- BUTTON -->
-                <a href="www.costafitcalella.com" target="_blank" class="client-btn">
-
-                    Ver proyecto
-
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact" class="contact">
-
-    <span>Contacto</span>
-
-    <h2>
-       Contacta conmigo
-    </h2>
-
-    <p>
-       Cuéntame qué necesitas y te ayudaré a solucionarlo.
-    </p>
-    <div class="contact-zones">
-
-    <!-- DESTACADO -->
-    <div class="main-location">
-        <i class="fa-solid fa-location-dot"></i>
-        <span>Arenys de Mar</span>
-    </div>
-
-    <!-- OTRAS ZONAS -->
-    <div class="zones-list">
-        <span>Sant Iscle</span>
-        <span>Sant Cebriá</span>
-        <span>Canet de Mar</span>
-        <span>Sant Pol de Mar</span>
-        <span>Caldes d'Estrac</span>
-        <span>LLavaneras</span>
-        <span>Arenys de Munt</span>
-    </div>
-
-</div>
-
-    <button>Contactar ahora</button>
-
-</section>
-
-<footer class="footer">
-
-    <div class="footer-container">
-
-        <!-- BRAND -->
-        <div class="footer-col">
-            <h3>scordero</h3>
             <p>
-                Soluciones IT modernas para empresas que buscan rendimiento,
-                seguridad y diseño premium.
+                La privacidad de los usuarios es importante para nosotros.
+                Los datos personales facilitados a través de este sitio web serán
+                tratados de forma confidencial y utilizados únicamente para atender
+                solicitudes de contacto o prestar los servicios solicitados.
             </p>
 
-            <div class="footer-socials">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-linkedin-in"></i>
-            </div>
-        </div>
+            <div class="legal-info">
 
-        <!-- CONTACT -->
-        <div class="footer-col">
-            <h3>Contacto</h3>
+                <div class="legal-item">
+                    <i class="fa-solid fa-shield"></i>
+                    <span>Protección de datos segura</span>
+                </div>
 
-            <div class="footer-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>contacto@scordero.com</span>
-            </div>
+                <div class="legal-item">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Información tratada confidencialmente</span>
+                </div>
 
-            <div class="footer-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Arenys de Mar, Barcelona</span>
+                <div class="legal-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>No compartimos datos con terceros</span>
+                </div>
+
             </div>
 
-            <div class="footer-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>+34 600 000 000</span>
-            </div>
-        </div>
+            <p>
+                Los usuarios podrán ejercer sus derechos de acceso, rectificación,
+                cancelación y oposición enviando una solicitud mediante correo
+                electrónico.
+            </p>
 
-        <!-- LEGAL -->
-        <div class="footer-col">
-            <h3>Legal</h3>
+            <p>
+                Este sitio web puede utilizar cookies técnicas necesarias para
+                garantizar el correcto funcionamiento de la página.
+            </p>
 
-            <a href="#" id="openLegalModal">Aviso legal</a>
-            <a href="#" id="openPrivacyModal">Privacidad</a>
-            <a href="#" id="openIssueModal">Cookies</a>
         </div>
 
     </div>
 
-    <!-- SUBFOOTER -->
-    <div class="subfooter">
+    <div class="issue-Modal" id="issueModal">
 
-        <div>© 2026 scordero. All rights reserved.</div>
+        <div class="modal-content">
 
-        <div class="subfooter-right">
-            <span>Made with</span>
-            <i class="fa-solid fa-heart"></i>
-            <span>in Spain</span>
+            <!-- CLOSE -->
+            <div class="close-legal" id="closeIssueModal">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <h2>Resolución de incidencias</h2>
+
+            <p>Servicios y precios orientativos:</p>
+
+            <ul class="price-list">
+
+                <li><strong>Formateo de PC:</strong> 50€</li>
+                <li><strong>Eliminación de virus:</strong> 40€</li>
+                <li><strong>PC lento / optimización:</strong> 45€</li>
+                <li><strong>No enciende el ordenador:</strong> 60€</li>
+                <li><strong>Problemas de internet:</strong> 35€</li>
+                <li><strong>Recuperación de datos:</strong> 70€</li>
+                <li><strong>Instalación Windows:</strong> 50€</li>
+                <li><strong>Configuración impresoras:</strong> 30€</li>
+
+            </ul>
+
+            <div class="price">
+                Servicio a domicilio en el Maresme
+            </div>
+
         </div>
 
     </div>
 
-</footer>
+    <!-- MODAL -->
+    <div class="legal-modal" id="legalModal">
 
+        <div class="legal-modal-content">
 
-
-<!-- MODAL PRIVACIDAD -->
-<div class="legal-modal" id="privacyModal">
-
-    <div class="legal-modal-content">
-
-        <!-- CLOSE -->
-        <div class="close-legal" id="closePrivacyModal">
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-
-        <!-- CONTENT -->
-        <h2>Política de privacidad</h2>
-
-        <p>
-            La privacidad de los usuarios es importante para nosotros.
-            Los datos personales facilitados a través de este sitio web serán
-            tratados de forma confidencial y utilizados únicamente para atender
-            solicitudes de contacto o prestar los servicios solicitados.
-        </p>
-
-        <div class="legal-info">
-
-            <div class="legal-item">
-                <i class="fa-solid fa-shield"></i>
-                <span>Protección de datos segura</span>
+            <!-- CLOSE -->
+            <div class="close-legal" id="closeLegalModal">
+                <i class="fa-solid fa-xmark"></i>
             </div>
 
-            <div class="legal-item">
-                <i class="fa-solid fa-lock"></i>
-                <span>Información tratada confidencialmente</span>
+            <!-- CONTENT -->
+            <h2>Aviso legal</h2>
+
+            <p>
+                En cumplimiento del deber de información recogido en la Ley
+                34/2002, de Servicios de la Sociedad de la Información y Comercio
+                Electrónico (LSSI-CE), se informa que este sitio web pertenece a:
+            </p>
+
+            <div class="legal-info">
+
+                <div class="legal-item">
+                    <i class="fa-solid fa-user"></i>
+                    <span>scordero</span>
+                </div>
+
+                <div class="legal-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Arenys de Mar, Barcelona</span>
+                </div>
+
+                <div class="legal-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>ironh4sh@gmail.com</span>
+                </div>
+
             </div>
 
-            <div class="legal-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>No compartimos datos con terceros</span>
-            </div>
+            <p>
+                El acceso y uso de este sitio web atribuye la condición de usuario,
+                aceptando desde dicho acceso las presentes condiciones de uso.
+            </p>
 
-        </div>
+            <p>
+                Todos los contenidos, diseños, textos e imágenes son propiedad de
+                sus respectivos titulares y están protegidos por la normativa
+                vigente.
+            </p>
 
-        <p>
-            Los usuarios podrán ejercer sus derechos de acceso, rectificación,
-            cancelación y oposición enviando una solicitud mediante correo
-            electrónico.
-        </p>
-
-        <p>
-            Este sitio web puede utilizar cookies técnicas necesarias para
-            garantizar el correcto funcionamiento de la página.
-        </p>
-
-    </div>
-
-</div>
-
-<div class="issue-Modal" id="issueModal">
-
-    <div class="modal-content">
-
-        <!-- CLOSE -->
-        <div class="close-legal" id="closeIssueModal">
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-
-        <h2>Resolución de incidencias</h2>
-
-        <p>Servicios y precios orientativos:</p>
-
-        <ul class="price-list">
-
-            <li><strong>Formateo de PC:</strong> 50€</li>
-            <li><strong>Eliminación de virus:</strong> 40€</li>
-            <li><strong>PC lento / optimización:</strong> 45€</li>
-            <li><strong>No enciende el ordenador:</strong> 60€</li>
-            <li><strong>Problemas de internet:</strong> 35€</li>
-            <li><strong>Recuperación de datos:</strong> 70€</li>
-            <li><strong>Instalación Windows:</strong> 50€</li>
-            <li><strong>Configuración impresoras:</strong> 30€</li>
-
-        </ul>
-
-        <div class="price">
-            Servicio a domicilio en el Maresme
         </div>
 
     </div>
 
-</div>
 
-<!-- MODAL -->
-<div class="legal-modal" id="legalModal">
-
-    <div class="legal-modal-content">
-
-        <!-- CLOSE -->
-        <div class="close-legal" id="closeLegalModal">
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-
-        <!-- CONTENT -->
-        <h2>Aviso legal</h2>
-
-        <p>
-            En cumplimiento del deber de información recogido en la Ley
-            34/2002, de Servicios de la Sociedad de la Información y Comercio
-            Electrónico (LSSI-CE), se informa que este sitio web pertenece a:
-        </p>
-
-        <div class="legal-info">
-
-            <div class="legal-item">
-                <i class="fa-solid fa-user"></i>
-                <span>scordero</span>
-            </div>
-
-            <div class="legal-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Arenys de Mar, Barcelona</span>
-            </div>
-
-            <div class="legal-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>contacto@scordero.com</span>
-            </div>
-
-        </div>
-
-        <p>
-            El acceso y uso de este sitio web atribuye la condición de usuario,
-            aceptando desde dicho acceso las presentes condiciones de uso.
-        </p>
-
-        <p>
-            Todos los contenidos, diseños, textos e imágenes son propiedad de
-            sus respectivos titulares y están protegidos por la normativa
-            vigente.
-        </p>
-
+    <div class="scroll-top" id="scrollTop">
+        <div class="mouse"></div>
     </div>
 
-</div>
 
-
-<div class="scroll-top" id="scrollTop">
-  <div class="mouse"></div>
-</div>
-
-
-<script src="js/app.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
+
 </html>
