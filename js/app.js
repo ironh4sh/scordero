@@ -5,6 +5,13 @@ function toggleMenu(){
     .classList.toggle("active");
 }
 
+function toggleMenu(){
+
+    document
+    .getElementById("mobileMenu")
+    .classList.toggle("active");
+
+}
 
 /* =========================
 Ini: Language
