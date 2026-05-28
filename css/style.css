@@ -514,25 +514,6 @@ ICONS SERVICES
 }
 
 
-/* =========================================================
-SERVICES PRICES
-========================================================= */
-.price-list{
-    margin-top:15px;
-    padding-left:0;
-    list-style:none;
-}
-
-.price-list li{
-    padding:10px 0;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    color:#ddd;
-    font-size:14px;
-}
-
-.price-list li strong{
-    color:#fff;
-}
 
 
 
@@ -1006,10 +987,10 @@ LEGAL MODAL
 
 
 /* =========================================================
-MODAL  Issue
+INI: MODAL  ISSUE
 ========================================================= */
 
-/* MODAL BASE */
+
 .issue-Modal{
     position:fixed;
     inset:0;
@@ -1019,7 +1000,7 @@ MODAL  Issue
     justify-content:center;
 
     background:var(--bg);
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(16px);
 
     opacity:0;
     visibility:hidden;
@@ -1030,19 +1011,61 @@ MODAL  Issue
     z-index:9999;
 }
 
-/* ACTIVE */
 .issue-Modal.active{
     opacity:1;
     visibility:visible;
     pointer-events:auto;
 }
 
-/* CONTENT */
-.issue-Modal .modal-content{
-    width:92%;
-    max-width:700px;
 
-    background:#0b0b0b;
+/* SERVICES PRICES  */
+.price-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.price-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:12px 14px;
+
+     background:var(--bg);
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:14px;
+
+    transition:0.25s;
+}
+
+.price-list li:hover{
+ background:var(--bg);
+    transform:translateX(4px);
+}
+
+.price-list strong{
+    color:#fff;
+    font-weight:500;
+}
+
+.price-list span{
+    color:#1f6feb;
+    font-weight:700;
+}
+
+/* MODAL CARD  */
+
+.issue-style{
+    width:92%;
+    max-width:720px;
+
+    background:linear-gradient(145deg,#0b0f14,#111827);
     border:1px solid rgba(255,255,255,0.08);
 
     border-radius:26px;
@@ -1050,11 +1073,14 @@ MODAL  Issue
 
     position:relative;
 
-    animation:modalIn 0.25s ease;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+
+    animation:modalIn 0.3s ease;
 }
 
-/* CLOSE BUTTON */
-.close-modal{
+/* CLOSE BUTTON  */
+
+.close-legal{
     position:absolute;
     top:18px;
     right:18px;
@@ -1074,13 +1100,148 @@ MODAL  Issue
     transition:0.3s;
 }
 
-.close-modal:hover{
-    background:#fff;
+.close-legal:hover{
+     background:var(--text-);
     color:#000;
     transform:rotate(90deg);
 }
 
-/* ANIMATION FIX */
+/*  TITLES  */
+
+.issue-style h2{
+    font-size:28px;
+    margin-bottom:10px;
+    letter-spacing:-1px;
+}
+
+.subtitle{
+    color:#9ca3af;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+/* SERVICES PRICES  */
+.price-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.price-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:12px 14px;
+
+     background:var(--bg);
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:14px;
+
+    transition:0.25s;
+}
+
+.price-list li:hover{
+    border-color:rgba(31,111,235,0.4);
+    transform:translateX(4px);
+}
+
+.price-list strong{
+    color:#fff;
+    font-weight:500;
+}
+
+.price-list span{
+    color:#1f6feb;
+    font-weight:700;
+}
+
+/* PRICE LIST  */
+
+.price-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.price-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:12px 14px;
+
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:14px;
+
+    transition:0.25s;
+}
+
+.price-list li:hover{
+    border-color:rgba(31,111,235,0.4);
+    transform:translateX(4px);
+}
+
+.price-list strong{
+    color:#fff;
+    font-weight:500;
+}
+
+.price-list span{
+    color:#1f6feb;
+    font-weight:700;
+}
+
+/*  EXTRAS  */
+
+.extras{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  
+}
+
+.extra-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+   margin-bottom:20px;
+    margin-top:20px;
+    padding:12px 14px;
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.06);
+
+    color:#cfcfcf;
+    font-size:14px;
+}
+
+.extra-box i{
+    color:#1f6feb;
+}
+
+.extra-box.highlight{
+    border-color:rgba(251,191,36,0.35);
+    color:#fbbf24;
+}
+
+.extra-box.highlight i{
+    color:#fbbf24;
+}
+
+/*  ANIMATION  */
+
 @keyframes modalIn{
     from{
         transform:translateY(20px) scale(0.98);
@@ -1092,7 +1253,13 @@ MODAL  Issue
     }
 }
 
-/* Ini: Scroll Top botón */
+/* =========================================================
+END: MODAL  ISSUE
+========================================================= */
+
+/* =========================================================
+Ini: Scroll Top botón 
+========================================================= */
 .scroll-top {
     position: fixed;
     bottom: 30px;
@@ -1151,11 +1318,13 @@ MODAL  Issue
         transform: translate(-50%, 10px);
     }
 }
-/* End: Scroll Top botón */
-
-/* INI: Customers */
 /* =========================================================
+END: Scroll Top botón 
+========================================================= */
 
+
+/* =========================================================
+INI: Customers 
 ========================================================= */
 
 .clients-section{
