@@ -6,6 +6,37 @@ function toggleMenu(){
 }
 
 
+/* =========================
+Ini: Language
+========================= */
+
+function setLanguage(lang){
+
+    document.querySelectorAll("[data-es]").forEach(el => {
+
+        const text = el.getAttribute("data-" + lang);
+
+        if(text){
+            el.innerText = text;
+        }
+
+    });
+
+    localStorage.setItem("lang", lang);
+}
+
+/* AUTO DETECT */
+let lang = localStorage.getItem("lang") || navigator.language.slice(0,2);
+
+if(!["es","en","de","ca"].includes(lang)){
+    lang = "es";
+}
+
+setLanguage(lang);
+
+/* =========================
+End: Language
+========================= */
 
 /* =========================
 Ini: Scroll Top
